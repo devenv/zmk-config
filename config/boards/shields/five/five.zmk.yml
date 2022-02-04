@@ -1,0 +1,12 @@
+file_format: "1"
+id: five
+name: Number Five
+type: shield
+url: https://github.com/devenv/zmk-config
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+siblings:
+  - five_left
+  - five_right
