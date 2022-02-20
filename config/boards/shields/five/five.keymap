@@ -10,16 +10,12 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
-#define DFLT 0
-#define NUMBERS 1
-#define MOUSE   2
-#define EXTRA   3
-#define MEDIA   4
-#define SYSTEM  5
-#define GAMING  6
-#define GAMALP  7
-#define GAMNUM  8
-#define GAMNAV  9
+#define DFLT    0
+#define SYMBOLS 1
+#define EXTRA   2
+#define SYSTEM  3
+#define GAMING  4
+#define GAMNAV  5
 
 
 / { 
@@ -72,82 +68,56 @@
             
         default_layer {
             bindings = <
-                &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P
+                &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
                 &lhs LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhs LSHIFT SQT
-                &lhm LCTRL Z    &lhm LGUI X     &lhm LALT C     &kp V           &kp B               &kp N           &kp M           &rhm LALT COMMA &rhm LGUI DOT   &rhm LCTRL SLASH
-                                                &tog MOUSE      &kp SPACE       &tog NUMBERS        &tog EXTRA      &kp BSPC        &kp ENTER
+                &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
+                                                &mo EXTRA       &lt EXTRA SPACE &mo SYMBOLS         &kp BSPC        &kp NO          &kp NO
             >;
         };
 
-        numbers_layer {
+        symbols_layer {
             bindings = <
-                &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp AMPS        &kp STAR        &kp MINUS       &kp EQUAL
-                &kp N1          &kp N2          &kp N3          &kp N4          &kp N5              &kp N6          &kp N7          &kp N8          &kp N9          &kp N0
-                &kp LPAR        &trans          &trans          &kp LBRC        &kp LBKT            &kp RBKT        &kp RBRC        &kp SEMI        &trans          &kp RPAR
-                                                &tog MOUSE      &trans          &tog DFLT           &tog EXTRA     &trans          &trans
-            >;
-        };
-
-        mouse_layer {
-            bindings = <
-                &kp LC(N1)      &trans          &trans          &trans          &trans              &trans          &kp HOME        &kp END         &trans          &kp PG_UP
-                &kp LC(N2)      &trans          &trans          &trans          &trans              &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp PG_DN
-                &kp LC(N3)      &trans          &trans          &trans          &trans              &trans          &trans          &trans          &trans          &trans
-                                                &tog MOUSE      &trans          &tog DFLT           &tog EXTRA      &trans          &trans
+                &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &rhm LALT MINUS
+                &lhs LSHIFT GRAVE &kp EQUA   L  &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhs LSHIFT N0
+                &kp LCTRL(Z)    &lhm LGUI BACKSLASH &kp STAR    &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
+                                                &trans          &trans          &trans              &trans          &trans          &trans
             >;
         };
 
         extra_layer {
             bindings = <
-                &kp TAB         &trans          &trans          &trans          &trans              &trans          &trans          &trans          &kp PIPE        &kp UNDER
-                &kp ESC         &trans          &trans          &trans          &trans              &trans          &trans          &caps_word      &kp BSLH        &kp COLON
-                &sk LCTRL       &sk LGUI        &sk LALT        &trans          &trans              &trans          &trans          &sk LALT        &sk LGUI        &sk LCTRL
-                                                &tog MEDIA      &trans          &tog DFLT           &tog SYSTEM     &trans          &trans
-            >;
-        };
-
-        media_layer {
-            bindings = <
-                &kp F1          &kp F2          &kp F3          &kp F4          &kp F5              &kp F6          &kp F7          &kp F8          &kp F9          &kp F10
-                &trans          &kp PSCRN       &trans          &kp K_VOL_UP    &trans              &trans          &trans          &trans          &kp F11         &kp F12
-                &kp C_PREV      &kp C_PP        &kp C_NEXT      &kp K_VOL_DN    &trans              &trans          &trans          &trans          &trans          &trans
-                                                &tog MOUSE      &trans          &tog DFLT           &tog EXTRA      &trans          &trans
+                &kp LCTRL(N1)   &kp LCTRL(N2)   &kp LCTRL(N3)   &kp LCTRL(N4)   &mo SYSTEM          &kp INSERT      &kp HOME        &kp END         &trans          &trans
+                &trans          &trans          &kp ENTER       &kp ESCAPE      &trans              &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
+                &kp LCTRL       &kp LGUI(Z)     &trans          &trans          &kp C_PP            &kp C_NEXT      &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
+                                                &trans          &trans          &trans              &trans          &trans          &trans
             >;
         };
 
         system_layer {
             bindings = <
-                &bt BT_CLR      &trans          &trans          &trans          &trans             &trans           &trans          &bootloader     &reset          &trans
-                &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans          &trans             &trans           &trans          &trans          &trans          &trans
-                &out OUT_USB    &out OUT_BLE    &trans          &trans          &trans             &trans           &trans          &trans          &trans          &trans
-                                                &tog GAMING     &trans          &tog DFLT          &tog EXTRA       &trans          &trans
+                &bootloader     &reset          &trans          &trans          &trans             &trans           &kp F1          &kp F2          &kp F3          &kp F10
+                &out OUT_USB    &out OUT_BLE    &trans          &trans          &trans             &trans           &kp F4          &kp F5          &kp F6          &kp F11
+                &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_CLR      &trans          &trans             &trans           &kp F7          &kp F8          &kp F9          &kp F12
+                                                &trans          &trans          &trans             &trans           &trans          &trans
 
             >;
         };
 
         gaming_layer {
             bindings = <
-                &kp TAB             &kp Q           &kp W           &kp E           &kp R           &kp Y           &kp HOME        &kp UP          &kp END         &kp P
-                &kp LCTRL           &kp A           &kp S           &kp D           &kp F           &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SINGLE_QUOTE
-                &kp LSHFT           &kp Z           &kp X           &kp C           &kp V           &kp N           &kp M           &kp COMMA       &kp PERIOD      &kp SLASH
-                                                    &kp N1          &kp SPACE       &kp N2          &tog GAMALP     &kp BSPC        &kp ENTER
-            >;
-        };
-        gamalp_layer {
-            bindings = <
-                &kp Q           &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P
-                &kp A           &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &kp SINGLE_QUOTE
-                &kp Z           &kp X           &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &kp PERIOD      &kp SLASH
-                                                &tog DFLT       &kp SPACE       &kp GAMNUM          &tog GAMING     &kp BSPC        &kp ENTER
+                &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp Y           &kp HOME        &kp UP          &kp END         &kp P
+                &kp LALT        &kp A           &kp S           &kp D           &kp F           &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SINGLE_QUOTE
+                &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp N           &kp M           &kp COMMA       &kp PERIOD      &kp SLASH
+                                                &mo GAMNUM      &kp LCTRL       &kp SPACE       &kp BSPC        &to DFLT        &kp ENTER
             >;
         };
 
         gamnum_layer {
             bindings = <
-                &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp AMPS        &kp STAR        &kp MINUS       &kp EQUAL
-                &kp N1          &kp N2          &kp N3          &kp N4          &kp N5              &kp N6          &kp N7          &kp N8          &kp N9          &kp N0
-                &kp LPAR        &trans          &trans          &kp LBRC        &kp LBKT            &kp RBKT        &kp RBRC        &kp SEMI        &trans          &kp RPAR
-                                                &tog DFLT       &kp SPACE       &tog GAMALP         &tog GAMING     &kp BSPC        &kp ENTER
+                &kp MINUS       &kp N7          &kp N8          &kp N9          &trans          &trans          &kp HOME        &kp END         &trans          &trans
+                &kp NO          &kp N4          &kp N5          &kp N6          &trans          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
+                &kp N0          &kp N1          &kp N2          &kp N3          &trans          &trans          &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
+                                                &trans          &trans          &trans          &trans          &trans          &trans
             >;
         };
 
