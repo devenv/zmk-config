@@ -98,7 +98,7 @@
             bindings = <
                 &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &rhm LALT MINUS
                 &lhs LSHIFT GRAVE &kp EQUAL     &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhs LSHIFT N0
-                &none           &lhm LGUI BACKSLASH &kp STAR    &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
+                &trans          &lhm LGUI BACKSLASH &kp STAR    &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
                                                 &trans          &trans          &trans              &trans          &trans          &trans
             >;
         };
@@ -107,7 +107,7 @@
             bindings = <
                 &kp LCTRL(N1)   &kp LCTRL(N2)   &kp LCTRL(N3)   &kp LCTRL(N4)   &mo SYSTEM          &kp INSERT      &kp HOME        &kp END         &trans          &trans
                 &trans          &trans          &kp ENTER       &kp ESCAPE      &trans              &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
-                &kp LCTRL       &kp LGUI(Z)     &trans          &trans          &kp C_PP            &kp C_NEXT      &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
+                &kp LCTRL       &trans          &trans          &trans          &kp C_PP            &kp C_NEXT      &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
                                                 &trans          &trans          &trans              &trans          &trans          &trans
             >;
         };
