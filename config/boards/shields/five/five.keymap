@@ -15,7 +15,7 @@
 #define EXTRA   2
 #define SYSTEM  3
 #define GAMING  4
-#define GAMNAV  5
+#define GAMNUM  5
 
 
 / { 
