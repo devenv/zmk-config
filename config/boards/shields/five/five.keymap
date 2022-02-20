@@ -71,7 +71,7 @@
                 &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
                 &lhs LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhs LSHIFT SQT
                 &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
-                                                &mo EXTRA       &lt EXTRA SPACE &mo SYMBOLS         &kp BSPC        &kp NO          &kp NO
+                                                &mo EXTRA       &lt EXTRA SPACE &mo SYMBOLS         &mo SYMBOLS     &kp BACKSPACE   &none
             >;
         };
 
@@ -108,14 +108,14 @@
                 &kp TAB         &kp Q           &kp W           &kp E           &kp R           &kp Y           &kp HOME        &kp UP          &kp END         &kp P
                 &kp LALT        &kp A           &kp S           &kp D           &kp F           &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SINGLE_QUOTE
                 &kp LSHFT       &kp Z           &kp X           &kp C           &kp V           &kp N           &kp M           &kp COMMA       &kp PERIOD      &kp SLASH
-                                                &mo GAMNUM      &kp LCTRL       &kp SPACE       &kp BSPC        &to DFLT        &kp ENTER
+                                                &kp LCTRL       &kp SPACE       &mo GAMNUM      &kp BSPC        &to DFLT        &to DFLT
             >;
         };
 
         gamnum_layer {
             bindings = <
                 &kp MINUS       &kp N7          &kp N8          &kp N9          &trans          &trans          &kp HOME        &kp END         &trans          &trans
-                &kp NO          &kp N4          &kp N5          &kp N6          &trans          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
+                &none           &kp N4          &kp N5          &kp N6          &trans          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
                 &kp N0          &kp N1          &kp N2          &kp N3          &trans          &trans          &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
                                                 &trans          &trans          &trans          &trans          &trans          &trans
             >;
