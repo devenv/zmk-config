@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: zmk
-      url-base: https://github.com/cdc-mkb/zmk
+      url-base: https://github.com/cdc-mkb
   projects:
     - name: zmk
       remote: zmk
