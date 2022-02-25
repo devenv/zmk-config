@@ -4,10 +4,9 @@ name: Number Five
 type: shield
 url: https://github.com/devenv/zmk-config
 requires: [pro_micro]
-exposes: [i2c_oled]
 features:
   - keys
-  - pointer
+  - trackball
 siblings:
   - five_left
   - five_right
