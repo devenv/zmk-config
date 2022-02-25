@@ -56,5 +56,12 @@
     compatible = "pimoroni,trackball_pim447";
     reg = <0xa>;
     label = "TRACKBALL_PIM447";
+
+    move-factor = <2>;
+    invert-move-x;
+    invert-move-y;
+    scroll-divisor = <2>;
+    invert-scroll-x;
+    invert-scroll-y;
   };
 };
