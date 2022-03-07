@@ -24,42 +24,22 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <200>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
 
         };
         rhm: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <150>;
+            quick_tap_ms = <200>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15>;
-        };
-        lhs: homerow_shifts_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFTS_LEFT";
-            #binding-cells = <2>;
-            tapping-term-ms = <140>;
-            quick_tap_ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33>;
-        };
-        rhs: homerow_shifts_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_SHIFTS_RIGHT";
-            #binding-cells = <2>;
-            tapping-term-ms = <140>;
-            quick_tap_ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
         };
     };
 
@@ -91,7 +71,7 @@
         default_layer {
             bindings = <
                 &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
-                &lhs LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhs LSHIFT SQT
+                &lhm LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhm LSHIFT SQT
                 &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
                                                 &mo EXTRA       &lt EXTRA SPACE &mo SYMBOLS         &mo SYMBOLS     &kp BACKSPACE   &mo EXTRA
             >;
@@ -100,7 +80,7 @@
         symbols_layer {
             bindings = <
                 &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &rhm LALT MINUS
-                &lhs LSHIFT GRAVE &kp EQUAL     &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhs LSHIFT N0
+                &lhm LSHIFT GRAVE &kp EQUAL     &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhm LSHIFT N0
                 &kp LC(Z)       &lhm LGUI BACKSLASH &kp STAR    &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
                                                 &trans          &trans          &trans              &trans          &trans          &trans
             >;
