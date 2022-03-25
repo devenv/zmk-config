@@ -98,7 +98,7 @@
             bindings = <
                 &trans          &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans             &trans           &kp F1          &kp F2          &kp F3          &kp F10
                 &trans          &out OUT_USB    &out OUT_BLE    &trans          &reset             &reset           &kp F4          &kp F5          &kp F6          &kp F11
-                &bootloader     &bt BT_CLR      &trans          &trans          &trans             &bootloader      &trans          &kp F7          &kp F8          &kp F9          &kp F12
+                &bootloader     &bt BT_CLR      &trans          &trans          &trans             &bootloader      &kp F7          &kp F8          &kp F9          &kp F12
                                                 &trans          &trans          &trans
 
             >;
