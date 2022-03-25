@@ -15,7 +15,6 @@
 #define EXTRA   2
 #define SYSTEM  3
 #define GAMING  4
-#define GAMNUM  5
 
 
 / { 
@@ -28,7 +27,7 @@
             quick_tap_ms = <200>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            #hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
 
         };
         rhm: homerow_mods_right {
@@ -39,7 +38,7 @@
             quick_tap_ms = <200>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+            #hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
         };
     };
 
@@ -71,9 +70,9 @@
         default_layer {
             bindings = <
                 &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
-                &lhm LSHIFT A   &pim447_toggle  &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhm LSHIFT SQT
+                &lhm LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhm LSHIFT SQT
                 &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
-                                                &mo EXTRA       &lt EXTRA SPACE &mo SYMBOLS         &mo SYMBOLS     &kp BACKSPACE   &mo EXTRA
+                                                &mo EXTRA       &lt EXTRA SPACE &kp BACKSPACE
             >;
         };
 
@@ -82,7 +81,7 @@
                 &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &rhm LALT MINUS
                 &lhm LSHIFT GRAVE &kp EQUAL     &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhm LSHIFT N0
                 &kp AMPS        &lhm LGUI BACKSLASH &kp STAR    &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
-                                                &trans          &trans          &trans              &trans          &trans          &trans
+                                                &trans          &trans          &trans
             >;
         };
 
@@ -91,7 +90,7 @@
                 &kp LC(N1)      &kp LC(N2)      &kp LC(N3)      &kp LC(N4)      &mo SYSTEM          &kp INSERT      &kp HOME        &kp END         &trans          &mo SYSTEM
                 &pim447_toggle  &trans          &kp ENTER       &kp ESCAPE      &trans              &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
                 &kp LCTRL       &trans          &trans          &trans          &kp C_PP            &kp C_NEXT      &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
-                                                &trans          &trans          &to GAMING          &trans          &trans          &trans
+                                                &to GAMING      &trans          &trans
             >;
         };
 
@@ -100,7 +99,7 @@
                 &trans          &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans             &trans           &kp F1          &kp F2          &kp F3          &kp F10
                 &trans          &out OUT_USB    &out OUT_BLE    &trans          &reset             &reset           &kp F4          &kp F5          &kp F6          &kp F11
                 &bootloader     &bt BT_CLR      &trans          &trans          &trans             &bootloader      &trans          &kp F7          &kp F8          &kp F9          &kp F12
-                                                &trans          &trans          &trans             &trans           &trans          &trans
+                                                &trans          &trans          &trans
 
             >;
         };
@@ -110,16 +109,7 @@
                 &kp LALT        &kp Q           &kp W           &kp E           &kp R           &kp Y           &kp HOME        &kp UP          &kp END         &kp P
                 &kp LSHFT       &kp A           &kp S           &kp D           &kp F           &kp H           &kp LEFT        &kp DOWN        &kp RIGHT       &kp SINGLE_QUOTE
                 &kp LCTRL       &kp Z           &kp X           &kp C           &kp V           &kp N           &kp M           &kp COMMA       &kp PERIOD      &kp SLASH
-                                                &mo GAMNUM      &kp TAB         &kp SPACE       &kp BSPC        &to DFLT        &to DFLT
-            >;
-        };
-
-        gamnum_layer {
-            bindings = <
-                &kp MINUS       &kp N7          &kp N8          &kp N9          &trans          &trans          &kp HOME        &kp END         &trans          &trans
-                &none           &kp N4          &kp N5          &kp N6          &trans          &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &trans
-                &kp N0          &kp N1          &kp N2          &kp N3          &trans          &trans          &kp PAGE_DOWN   &sk PAGE_UP     &trans          &trans
-                                                &trans          &to DFLT        &trans          &trans          &trans          &trans
+                                                &kp TAB         &kp SPACE       &kp BSPC
             >;
         };
 
