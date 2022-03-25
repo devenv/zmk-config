@@ -80,7 +80,7 @@
             bindings = <
                 &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &rhm LALT MINUS
                 &lhm LSHIFT GRAVE &kp EQUAL     &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhm LSHIFT N0
-                &kp AMPS        &lhm LGUI BACKSLASH &kp STAR    &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
+                &kp BACKSLASH   &lhm LGUI AMPS  &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
                                                 &trans          &trans          &trans
             >;
         };
