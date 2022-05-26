@@ -72,7 +72,7 @@
                 &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
                 &lhm LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhm LSHIFT SQT
                 &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
-                                                                &mo EXTRA       &lt SYMBOLS SPACE   &kp BACKSPACE   &kp EXTRA
+                                                                &mo EXTRA       &lt SYMBOLS SPACE   &kp BACKSPACE   &mo EXTRA
             >;
         };
 
@@ -97,7 +97,7 @@
         system_layer {
             bindings = <
                 &trans          &bt BT_SEL 0    &bt BT_SEL 1    &trans          &trans             &trans           &kp F1          &kp F2          &kp F3          &kp F10
-                &trans          &out OUT_USB    &out OUT_BLE    &trans          &reset             &reset           &kp F4          &kp F5          &kp F6          &kp F11
+                &reset          &out OUT_USB    &out OUT_BLE    &trans          &reset             &reset           &kp F4          &kp F5          &kp F6          &kp F11
                 &bootloader     &bt BT_CLR      &trans          &trans          &trans             &bootloader      &kp F7          &kp F8          &kp F9          &kp F12
                                                                 &trans          &trans             &trans           &trans
 
