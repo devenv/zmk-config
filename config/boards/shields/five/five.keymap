@@ -15,6 +15,7 @@
 #define EXTRA     2
 #define SYSTEM    3
 #define GAMING    4
+#define GAMING    5
 
 
 / { 
@@ -48,19 +49,19 @@
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp TAB>;
-            layers = <DFLT SYMBOLS EXTRA SYSTEM>;
+            layers = <DFLT>;
         };
         combo_esc {
             timeout-ms = <50>;
             key-positions = <12 13>;
             bindings = <&kp ESC>;
-            layers = <DFLT SYMBOLS EXTRA SYSTEM>;
+            layers = <DFLT>;
         };
         combo_enter {
             timeout-ms = <50>;
             key-positions = <16 17>;
             bindings = <&kp ENTER>;
-            layers = <DFLT SYMBOLS EXTRA SYSTEM GAMING>;
+            layers = <DFLT>;
         };
     };
 
@@ -81,16 +82,16 @@
                 &kp EXCL        &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &rhm LALT MINUS
                 &lhm LSHIFT GRAVE &kp EQUAL     &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &rhm LSHIFT N0
                 &kp BACKSLASH   &lhm LGUI AMPS  &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &rhm LGUI N3    &rhm LCTRL DOT
-                                                                &kp DELETE      &trans              &trans          &kp LC(LS(LA(LGUI)))
+                                                                &to NAV         &trans              &trans          &kp DELETE
             >;
         };
 
         extra_layer {
             bindings = <
-                &lhm LALT LC(N1) &kp LC(N2)     &kp LC(N3)      &kp LC(N4)      &mo SYSTEM          &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PSCRN
-                &kp LSHIFT       &kp TAB        &kp ENTER       &kp ESCAPE      &kp PSCRN           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
-                &lhm LCTRL LC(Z) &kp LGUI       &kp LC(Z)       &kp C_PP        &kp C_NEXT          &trans          &kp ESCAPE      &kp ENTER       &kp TAB         &kp PAGE_DOWN   
-                                                                &kp LC(LS(LA(LGUI))) &to GAMING     &trans          &kp LC(LS(LA(LGUI)))
+                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &lt SYSTEM LC(N4)   &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PAGE_UP
+                &lhm LSHIFT LC(TAB) &kp TAB     &kp ENTER       &kp ESCAPE      &kp PSCRN           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
+                &lhm LCTRL LC(Z) &kp LGUI       &kp LC(Z)       &kp C_PP        &kp C_NEXT          &trans          &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL   
+                                                                &trans          &to GAMING          &trans          &kp DELETE
             >;
         };
 
@@ -110,6 +111,15 @@
                 &kp LSHIFT      &kp A           &kp S           &kp D           &kp F            &kp G              &kp N4          &kp N5          &kp N6          &kp N0
                 &kp LALT        &kp Z           &kp X           &kp C           &kp V            &kp B              &kp N1          &kp N2          &kp N3          &kp DOT
                                                                 &kp LCTRL       &kp SPACE        &to DFLT           &trans
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &lt SYSTEM LC(N4)   &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &rhm ALT LC(LS(TAB))
+                &lhm LSHIFT LC(TAB) &kp TAB     &kp ENTER       &kp ESCAPE      &kp PSCRN           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &rhm LSHIFT LC(TAB)
+                &lhm LCTRL LC(Z) &kp RIGHT      &kp UP          &kp DOWN        &kp LEFT            &trans          &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
+                                                                &to DFLT        &lt SYMBOLS SPACE   &kp BACKSPACE   &mo SYMBOLS
             >;
         };
 
