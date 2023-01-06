@@ -73,7 +73,7 @@
                 &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
                 &lhm LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhm LSHIFT SQT
                 &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
-                                                                &mo EXTRA       &lt SYMBOLS SPACE   &kp BACKSPACE   &mo SYMBOLS
+                                                                &lt EXTRA TAB   &lt SYMBOLS SPACE   &kp BACKSPACE   &mo SYMBOLS
             >;
         };
 
@@ -116,9 +116,9 @@
 
         nav_layer {
             bindings = <
-                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &lt SYSTEM LC(N4)   &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &rhm LALT LC(LS(TAB))
-                &lhm LSHIFT LC(TAB) &kp TAB     &kp ENTER       &kp ESCAPE      &kp PSCRN           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &rhm LSHIFT LC(TAB)
-                &lhm LCTRL LC(Z) &kp RIGHT      &kp UP          &kp DOWN        &kp LEFT            &trans          &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
+                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &kp LC(N4)          &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &rhm LALT LC(LS(TAB))
+                &lhm LSHIFT LC(TAB) &kp RIGHT   &kp UP          &kp DOWN        &kp LEFT            &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &rhm LSHIFT LC(TAB)
+                &lhm LCTRL LC(Z) &kp TAB        &kp ENTER       &kp ESCAPE      &kp PSCRN           &kp LA(TAB)     &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
                                                                 &to DFLT        &lt SYMBOLS SPACE   &kp BACKSPACE   &mo SYMBOLS
             >;
         };
