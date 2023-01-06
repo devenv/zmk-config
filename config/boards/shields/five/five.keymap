@@ -15,7 +15,7 @@
 #define EXTRA     2
 #define SYSTEM    3
 #define GAMING    4
-#define GAMING    5
+#define NAV       5
 
 
 / { 
