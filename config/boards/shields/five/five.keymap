@@ -20,11 +20,31 @@
 
 / { 
     behaviors {
+        llt: lt_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_LEFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <130>;
+            quick_tap_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+            #hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+        };
+        rlt: lt_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <130>;
+            quick_tap_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+            #hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+        };
         lhm: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -35,7 +55,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -73,7 +93,7 @@
                 &lhm LALT Q     &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &rhm LALT P
                 &lhm LSHIFT A   &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &rhm LSHIFT SQT
                 &lhm LCTRL Z    &lhm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &rhm LGUI DOT   &rhm LCTRL SLASH
-                                                                &lt EXTRA TAB  &lt SYMBOLS SPACE  &kp BACKSPACE   &mo SYMBOLS
+                                                                &llt EXTRA TAB  &llt SYMBOLS SPACE  &kp BACKSPACE   &mo SYMBOLS
             >;
         };
 
@@ -88,7 +108,7 @@
 
         extra_layer {
             bindings = <
-                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &lt SYSTEM LC(N4)   &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PAGE_UP
+                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &mo SYSTEM          &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PAGE_UP
                 &lhm LSHIFT LC(TAB) &kp TAB     &kp ENTER       &kp ESCAPE      &kp PSCRN           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
                 &lhm LCTRL LC(Z) &lt LGUI BACKSPACE &kp LC(Z)   &kp C_PP        &kp C_NEXT          &trans          &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL   
                                                                 &trans          &to GAMING          &trans          &kp DELETE
@@ -116,7 +136,7 @@
 
         nav_layer {
             bindings = <
-                &lhm LALT LC(LS(TAB)) &kp LC(N1) &kp LC(N2)     &kp LC(N3)      &kp LC(N4)          &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &rhm LALT LC(LS(TAB))
+                &lhm LALT LC(LS(TAB)) &kp TAB    &kp HOME       &kp END         &kp PSCRN           &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &rhm LALT LC(LS(TAB))
                 &lhm LSHIFT LC(TAB) &kp LEFT     &kp UP         &kp DOWN        &kp RIGHT           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &rhm LSHIFT LC(TAB)
                 &lhm LCTRL LC(Z) &kp BACKSPACE   &kp ENTER      &kp ESCAPE      &kp PSCRN           &kp LA(TAB)     &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
                                                                 &to DFLT        &kp SPACE           &kp BACKSPACE   &mo SYMBOLS
