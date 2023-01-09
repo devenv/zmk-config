@@ -96,7 +96,7 @@
             bindings = <
                 &tpm LALT Q      &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &tpm LALT P
                 &blm LSHIFT A    &kp S           &kp D           &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &blm LSHIFT SQT
-                &tpm LCTRL Z     &tp LGUI X      &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &tp LGUI DOT    &tpm LCTRL SLASH
+                &tpm LCTRL Z     &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &tpm LGUI DOT   &tpm LCTRL SLASH
                                                                  &hpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE   &mo SYMBOLS
             >;
         };
@@ -105,7 +105,7 @@
             bindings = <
                 &kp EXCL         &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &tpm LALT MINUS
                 &blm LSHIFT GRAVE &kp EQUAL      &kp UNDER       &kp COLON       &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &blm LSHIFT N0
-                &kp BACKSLASH    &tpm LGUI AMPS  &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &tp LGUI N3     &tpm LCTRL DOT
+                &kp BACKSLASH    &tpm LGUI AMPS  &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &tpm LGUI N3    &tpm LCTRL DOT
                                                                  &to NAV         &trans              &trans          &kp DELETE
             >;
         };
