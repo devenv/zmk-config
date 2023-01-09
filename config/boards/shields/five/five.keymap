@@ -83,13 +83,13 @@
         };
         combo_nav_d_f {
             timeout-ms = <50>;
-            key-positions = <23 24>;
+            key-positions = <13 14>;
             bindings = <&to NAV>;
             layers = <DFLT>;
         };
         combo_dflt_d_f {
             timeout-ms = <50>;
-            key-positions = <23 24>;
+            key-positions = <13 14>;
             bindings = <&to DFLT>;
             layers = <NAV>;
         };
