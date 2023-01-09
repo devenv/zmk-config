@@ -69,29 +69,35 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_gaming_v_b {
+        combo_dflt_to_gaming_v_b {
             timeout-ms = <50>;
             key-positions = <23 24>;
             bindings = <&to GAMING>;
             layers = <DFLT>;
         };
-        combo_dflt_c_v {
+        combo_gaming_to_dflt_c_v {
             timeout-ms = <50>;
             key-positions = <23 24>;
             bindings = <&to DFLT>;
             layers = <GAMING>;
         };
-        combo_nav_d_f {
+        combo_dflt_to_nav_d_f {
             timeout-ms = <50>;
-            key-positions = <13 14>;
+            key-positions = <12 13>;
             bindings = <&to NAV>;
             layers = <DFLT>;
         };
-        combo_dflt_d_f {
+        combo_nav_to_dflt_d_f {
             timeout-ms = <50>;
-            key-positions = <13 14>;
+            key-positions = <12 13>;
             bindings = <&to DFLT>;
             layers = <NAV>;
+        };
+        combo_pring_screen {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp PSCRN>;
+            layers = <DFLT GAMING NAV>;
         };
     };
 
@@ -146,9 +152,9 @@
 
         nav_layer {
             bindings = <
-                &tpm LALT LC(LS(TAB)) &kp TAB    &kp HOME       &kp END         &kp PSCRN           &kp PG_UP       &kp HOME        &kp END         &sk PAGE_UP     &tpm LALT LC(LS(TAB))
+                &tpm LALT LC(LS(TAB)) &kp TAB    &kp HOME       &kp END         &kp PG_UP           &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &tpm LALT LC(LS(TAB))
                 &blm LSHIFT LC(TAB) &kp LEFT     &kp UP         &kp DOWN        &kp RIGHT           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &blm LSHIFT LC(TAB)
-                &tpm LCTRL LC(Z) &kp BACKSPACE   &kp ENTER      &kp ESCAPE      &kp PSCRN           &kp PG_DN       &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
+                &tpm LCTRL LC(Z) &kp BACKSPACE   &kp ENTER      &kp ESCAPE      &kp PG_DN           &none           &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
                                                                 &to DFLT        &kp SPACE           &kp BACKSPACE   &mo SYMBOLS
             >;
         };
