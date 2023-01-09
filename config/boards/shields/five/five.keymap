@@ -69,23 +69,29 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_tab {
+        combo_gaming_v_b {
             timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp TAB>;
+            key-positions = <23 24>;
+            bindings = <&to GAMING>;
             layers = <DFLT>;
         };
-        combo_esc {
+        combo_dflt_c_v {
             timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp ESC>;
+            key-positions = <23 24>;
+            bindings = <&to DFLT>;
+            layers = <GAMING>;
+        };
+        combo_nav_d_f {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            bindings = <&to NAV>;
             layers = <DFLT>;
         };
-        combo_enter {
+        combo_dflt_d_f {
             timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp ENTER>;
-            layers = <DFLT>;
+            key-positions = <23 24>;
+            bindings = <&to DFLT>;
+            layers = <NAV>;
         };
     };
 
