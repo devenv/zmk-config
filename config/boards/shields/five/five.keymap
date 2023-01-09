@@ -140,9 +140,9 @@
 
         nav_layer {
             bindings = <
-                &tpm LALT LC(LS(TAB)) &kp TAB    &kp HOME       &kp END         &kp PSCRN           &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &tpm LALT LC(LS(TAB))
+                &tpm LALT LC(LS(TAB)) &kp TAB    &kp HOME       &kp END         &kp PSCRN           &kp PG_UP       &kp HOME        &kp END         &sk PAGE_UP     &tpm LALT LC(LS(TAB))
                 &blm LSHIFT LC(TAB) &kp LEFT     &kp UP         &kp DOWN        &kp RIGHT           &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &blm LSHIFT LC(TAB)
-                &tpm LCTRL LC(Z) &kp BACKSPACE   &kp ENTER      &kp ESCAPE      &kp PSCRN           &kp LA(TAB)     &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
+                &tpm LCTRL LC(Z) &kp BACKSPACE   &kp ENTER      &kp ESCAPE      &kp PSCRN           &kp PG_DN       &kp ESCAPE      &kp ENTER       &kp TAB         &kp LCTRL
                                                                 &to DFLT        &kp SPACE           &kp BACKSPACE   &mo SYMBOLS
             >;
         };
