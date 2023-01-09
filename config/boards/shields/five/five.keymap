@@ -22,8 +22,7 @@
     behaviors {
         hpl: hold_preferred_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_LEFT";
-            #binding-cells = <2>;
+            label = "HOLD_PREFERRED_LAYER";
             tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "hold-preferred";
@@ -31,8 +30,7 @@
         };
         tpl: tap_preferred_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_RIGHT";
-            #binding-cells = <2>;
+            label = "TAP_REFERRED_LAYER";
             tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "tap-preferred";
@@ -40,8 +38,7 @@
         };
         bll: balanced_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
-            #binding-cells = <2>;
+            label = "BALANCED_LAYER";
             tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "balanced";
@@ -49,8 +46,7 @@
         };
         tpm: tap_preferred_modifier {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_RIGHT";
-            #binding-cells = <2>;
+            label = "TAP_REFERRED_MODIFIER";
             tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "tap-preferred";
@@ -58,8 +54,7 @@
         };
         blm: balanced_modifier {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
-            #binding-cells = <2>;
+            label = "BALANCED_MODIFIER";
             tapping-term-ms = <130>;
             quick_tap_ms = <200>;
             flavor = "balanced";
