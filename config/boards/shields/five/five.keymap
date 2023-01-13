@@ -65,7 +65,7 @@
             label = "BALANCED_MODIFIER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
-            flavor = "hold";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
