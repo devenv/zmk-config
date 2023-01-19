@@ -25,6 +25,8 @@
             label = "HOLD_PREFERRED_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
+            quick_tap_ms = <200>;
+
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -33,6 +35,7 @@
             label = "TAP_REFERRED_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
+            quick_tap_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -41,6 +44,7 @@
             label = "BALANCED_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
+            quick_tap_ms = <200>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -49,6 +53,7 @@
             label = "TAP_REFERRED_MODIFIER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
+            quick_tap_ms = <200>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -57,6 +62,7 @@
             label = "BALANCED_MODIFIER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
+            quick_tap_ms = <200>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
@@ -64,18 +70,6 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_dflt_to_gaming_v_b {
-            timeout-ms = <50>;
-            key-positions = <23 24>;
-            bindings = <&to GAMING>;
-            layers = <DFLT>;
-        };
-        combo_gaming_to_dflt_c_v {
-            timeout-ms = <50>;
-            key-positions = <23 24>;
-            bindings = <&to DFLT>;
-            layers = <GAMING>;
-        };
         combo_dflt_to_nav_d_f {
             timeout-ms = <50>;
             key-positions = <12 13>;
@@ -88,11 +82,11 @@
             bindings = <&to DFLT>;
             layers = <NAV>;
         };
-        combo_pring_screen {
+        combo_print_screen_r_t {
             timeout-ms = <50>;
             key-positions = <3 4>;
             bindings = <&kp PSCRN>;
-            layers = <DFLT GAMING NAV>;
+            layers = <DFLT NAV>;
         };
     };
 
