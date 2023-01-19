@@ -24,7 +24,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_PREFERRED_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
+            tapping-term-ms = <120>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -32,7 +32,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_REFERRED_LAYER";
             #binding-cells = <2>;
-            quick_tap_ms = <200>;
+            tapping-term-ms = <140>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -44,12 +44,12 @@
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
-        tpm: tap_preferred_modifier {
+        hpm: hold_preferred_modifier {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_REFERRED_MODIFIER";
+            label = "BALANCED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <120>;
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
         bpm: balanced_modifier {
@@ -60,12 +60,12 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
-        hpm: balanced_modifier {
+        tpm: tap_preferred_modifier {
             compatible = "zmk,behavior-hold-tap";
-            label = "BALANCED_MODIFIER";
+            label = "TAP_REFERRED_MODIFIER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
