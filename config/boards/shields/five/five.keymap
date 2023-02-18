@@ -13,9 +13,9 @@
 #define DFLT      0
 #define SYMBOLS   1
 #define EXTRA     2
-#define SYSTEM    3
-#define GAMING    4
-#define NAV       5
+#define GAMING    3
+#define NAV       4
+#define SYSTEM    5
 
 
 / {
