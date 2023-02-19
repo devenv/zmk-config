@@ -90,12 +90,6 @@
             bindings = <&kp PSCRN>;
             layers = <DFLT NAV>;
         };
-        combo_nav_ctrl_space {
-            timeout-ms = <50>;
-            key-positions = <30 31>;
-            bindings = <&mo NAV>;
-            layers = <GAMING>;
-        };
     };
 
     keymap {
