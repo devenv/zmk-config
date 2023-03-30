@@ -17,5 +17,5 @@ include:
     shield: five_left
   - board: nice_nano_v2
     shield: five_right
-  #- board: nice_nano_v2
-  #  shield: settings_reset
+  - board: nice_nano_v2
+    shield: settings_reset
