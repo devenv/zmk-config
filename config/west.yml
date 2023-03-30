@@ -5,7 +5,6 @@ manifest:
   projects:
     - name: zmk
       remote: zmk
-      revision: mouse-pim447
       import: app/west.yml
   self:
     path: config
