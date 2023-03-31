@@ -80,25 +80,25 @@
         };
         combo_esc_j_k {
             timeout-ms = <50>;
-            key-positions = <28 29>;
+            key-positions = <21 22>;
             bindings = <&kp ESC>;
             layers = <DFLT>;
         };
-        combo_dflt_to_nav_s_d {
+        combo_dflt_to_nav_c_v {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&to NAV>;
             layers = <DFLT>;
         };
-        combo_nav_to_dflt_s_d {
+        combo_nav_to_dflt_c_v {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&to DFLT>;
             layers = <NAV>;
         };
-        combo_caps_word_w_e {
+        combo_caps_word_e_r {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <2 3>;
             bindings = <&caps_word>;
             layers = <DFLT>;
         };
