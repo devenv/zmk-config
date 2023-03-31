@@ -28,20 +28,20 @@
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
+        bll: balanced_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCED_LAYER";
+            #binding-cells = <2>;
+            tapping-term-ms = <140>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
+        };
         tpl: tap_preferred_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_REFERRED_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <140>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-        bll: balanced_layer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BALANCED_LAYER";
-            #binding-cells = <2>;
-            tapping-term-ms = <130>;
-            flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
         hpm: hold_preferred_modifier {
@@ -56,7 +56,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BALANCED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <120>;
+            tapping-term-ms = <140>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
