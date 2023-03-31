@@ -117,7 +117,7 @@
             bindings = <
                 &tpm LALT Q      &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &tpm LALT P
                 &bpm LSHIFT A    &tpm LCTRL S    &tpm LALT D     &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &bpm LSHIFT SQT
-                &tpm LCTRL Z     &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &tpm LCTRL COMMA &tpm LGUI DOT  &tpm LCTRL SLASH
+                &tpm LCTRL Z     &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &tpm LCTRL M    &kp COMMA       &tpm LGUI DOT  &tpm LCTRL SLASH
                                                                  &hpl EXTRA TAB  &bll SYMBOLS SPACE  &kp BACKSPACE   &mo SYMBOLS
             >;
         };
