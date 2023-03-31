@@ -72,30 +72,6 @@
 
     combos {
         compatible = "zmk,combos";
-        combo_esc_d_f {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp ESC>;
-            layers = <DFLT>;
-        };
-        combo_esc_j_k {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp ESC>;
-            layers = <DFLT>;
-        };
-        combo_dflt_to_nav_c_v {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&to NAV>;
-            layers = <DFLT>;
-        };
-        combo_nav_to_dflt_c_v {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&to DFLT>;
-            layers = <NAV>;
-        };
         combo_caps_word_e_r {
             timeout-ms = <50>;
             key-positions = <2 3>;
@@ -107,6 +83,30 @@
             key-positions = <3 4>;
             bindings = <&kp PSCRN>;
             layers = <EXTRA SYMBOLS SYSTEM NAV>;
+        };
+        combo_esc_d_f {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp ESC>;
+            layers = <DFLT>;
+        };
+        combo_esc_j_k {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp ESC>;
+            layers = <DFLT>;
+        };
+        combo_dflt_to_nav_c_v {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&to NAV>;
+            layers = <DFLT>;
+        };
+        combo_nav_to_dflt_c_v {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&to DFLT>;
+            layers = <NAV>;
         };
     };
 
