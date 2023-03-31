@@ -96,9 +96,9 @@
             bindings = <&to DFLT>;
             layers = <NAV>;
         };
-        combo_caps_word_a_s {
+        combo_caps_word_w_e {
             timeout-ms = <50>;
-            key-positions = <10 11>;
+            key-positions = <1 2>;
             bindings = <&caps_word>;
             layers = <DFLT>;
         };
