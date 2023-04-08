@@ -78,21 +78,9 @@
             bindings = <&kp PSCRN>;
             layers = <EXTRA SYMBOLS SYSTEM NAV>;
         };
-        combo_esc_d_f {
+        combo_caps_word_d_f {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&kp ESC>;
-            layers = <DFLT>;
-        };
-        combo_esc_j_k {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp ESC>;
-            layers = <DFLT>;
-        };
-        combo_caps_word_x_c {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
             bindings = <&caps_word>;
             layers = <DFLT>;
         };
@@ -107,18 +95,6 @@
             key-positions = <22 23>;
             bindings = <&to DFLT>;
             layers = <NAV>;
-        };
-        combo_sym_to_dflt_m_comma {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&to SYMBOLS>;
-            layers = <DFLT>;
-        };
-        combo_dflt_to_sym_m_comma {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&to DFLT>;
-            layers = <SYMBOLS>;
         };
     };
 
