@@ -14,8 +14,9 @@
 #define SYMBOLS   1
 #define EXTRA     2
 #define GAMING    3
-#define NAV       4
-#define SYSTEM    5
+#define GNUM      4
+#define NAV       5
+#define SYSTEM    6
 
 
 / {
@@ -132,16 +133,25 @@
             bindings = <
                 &kp TAB         &kp Q           &kp W           &kp E           &kp R            &kp T              &kp N7          &kp N8          &kp N9          &kp MINUS
                 &kp LSHIFT      &kp A           &kp S           &kp D           &kp F            &kp G              &kp N4          &kp N5          &kp N6          &kp N0
-                &kp LALT        &kp Z           &tpl NAV X      &kp C           &kp V            &kp B              &kp N1          &kp N2          &kp N3          &kp DOT
+                &kp LALT        &kp Z           &tpl GNUM X     &kp C           &kp V            &kp B              &kp N1          &kp N2          &kp N3          &kp DOT
                                                                 &kp LCTRL       &kp SPACE        &to DFLT           &trans
+            >;
+        };
+
+        game_num_layer {
+            bindings = <
+                &kp MINUS       &kp N5          &trans          &kp N6          &kp PLUS          &trans            &trans          &trans         &trans           &trans
+                &kp N7          &kp N1          &kp S           &kp N2          &kp N8            &trans            &trans          &trans         &trans           &kp LSHIFT
+                &kp N9          &kp N3          &trans          &kp N4          &kp N0            &trans            &trans          &trans         &trans           &trans
+                                                                &to DFLT        &kp SPACE         &kp BACKSPACE     &trans
             >;
         };
 
         nav_layer {
             bindings = <
-                &kp N6          &kp N7          &kp N8          &kp N9          &kp N0            &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp LC(LS(TAB))
-                &kp N5          &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT         &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &tpm LSHIFT LC(TAB)
-                &kp N1          &kp N2          &trans          &kp N3          &kp N4            &trans          &trans          &trans          &trans          &trans
+                &trans          &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN   &kp END           &kp INSERT      &trans          &trans          &trans          &trans
+                &trans          &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT         &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
+                &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans
                                                                 &to DFLT        &kp SPACE         &kp BACKSPACE   &trans
             >;
         };
