@@ -16,7 +16,8 @@
 #define GAMING    3
 #define GNUM      4
 #define NAV       5
-#define SYSTEM    6
+#define LNUM      6
+#define SYSTEM    7
 
 
 / {
@@ -106,7 +107,7 @@
             bindings = <
                 &tpm LALT Q      &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P
                 &bpm LSHIFT A    &tpm LCTRL S    &tpm LALT D     &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &bpm LSHIFT SQT
-                &kp Z            &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &tpm LGUI DOT   &kp SLASH
+                &tpl LNUM Z      &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &tpm LGUI DOT   &kp SLASH
                                                                  &hpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE   &kp LCTRL
             >;
         };
@@ -133,7 +134,7 @@
             bindings = <
                 &kp TAB         &kp Q           &kp W           &kp E           &kp R            &kp T              &kp N7          &kp N8          &kp N9          &kp MINUS
                 &kp LSHIFT      &kp A           &kp S           &kp D           &kp F            &kp G              &kp N4          &kp N5          &kp N6          &kp N0
-                &kp LALT        &kp Z           &tpl GNUM X     &kp C           &kp V            &kp B              &kp N1          &kp N2          &kp N3          &kp DOT
+                &kp LALT        &tpl LNUM Z     &tpl GNUM X     &kp C           &kp V            &kp B              &kp N1          &kp N2          &kp N3          &kp DOT
                                                                 &kp LCTRL       &kp SPACE        &to DFLT           &trans
             >;
         };
@@ -144,6 +145,15 @@
                 &kp N7          &kp N1          &kp S           &kp N2          &kp N8            &trans            &trans          &trans         &trans           &kp LSHIFT
                 &kp N9          &kp N3          &trans          &kp N4          &kp N0            &trans            &trans          &trans         &trans           &trans
                                                                 &to DFLT        &kp SPACE         &kp BACKSPACE     &trans
+            >;
+        };
+
+        left_num_layer {
+            bindings = <
+                &trans          &trans          &kp N7          &kp N8          &kp N9            &trans            &trans          &trans         &trans           &trans
+                &trans          &trans          &kp N4          &kp N5          &kp N6            &trans            &trans          &trans         &trans           &kp LSHIFT
+                &trans          &trans          &kp N1          &kp N2          &kp N3            &trans            &trans          &trans         &trans           &trans
+                                                                &kp N0          &kp MINUS         &kp BACKSPACE     &trans
             >;
         };
 
@@ -165,16 +175,5 @@
 
             >;
         };
-
-/*
-        trans_layer {
-            bindings = <
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
-                &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans
-                                                                &trans          &trans          &trans          &trans
-            >;
-        };
-*/
     };
 };
