@@ -34,7 +34,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BALANCED_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
+            tapping-term-ms = <130>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BALANCED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
+            tapping-term-ms = <130>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
@@ -120,7 +120,7 @@
                                                                  &trans          &trans              &trans          &trans
             >;
         };
-
+ 
         extra_layer {
             bindings = <
                 &tpm LALT LC(N1) &kp LC(N2)      &kp LC(N3)      &kp LC(N4)      &tpl SYSTEM INSERT  &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PAGE_UP
