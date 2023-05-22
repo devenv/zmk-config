@@ -106,8 +106,8 @@
         default_layer {
             bindings = <
                 &tpm LALT Q      &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P
-                &bpm LSHIFT A    &tpm LCTRL S    &tpm LALT D     &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &bpm LSHIFT SQT
-                &tpl LNUM Z      &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &kp COMMA       &tpm LGUI DOT   &kp SLASH
+                &bpm LSHIFT A    &tpm LALT S     &tpm LCTRL D    &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &bpm LSHIFT SQT
+                &tpl LNUM Z      &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &tpl LCTRL COMMA &tpm LGUI DOT   &kp SLASH
                                                                  &hpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE   &kp LCTRL
             >;
         };
@@ -115,7 +115,7 @@
         symbols_layer {
             bindings = <
                 &tpm LALT EXCL   &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &kp MINUS
-                &bpm LSHIFT GRAVE &tpm LCTRL EQUAL &tpm LALT UNDER &kp COLON     &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &bpm LSHIFT N0
+                &bpm LSHIFT GRAVE &tpm LALT EQUAL &tpm LCTRL UNDER &kp COLON     &kp LPAR            &kp RPAR        &kp N4          &kp N5          &kp N6          &bpm LSHIFT N0
                 &kp BACKSLASH    &tpm LGUI AMPS  &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &kp N1          &kp N2          &tpm LGUI N3    &kp DOT
                                                                  &trans          &trans              &trans          &trans
             >;
@@ -124,7 +124,7 @@
         extra_layer {
             bindings = <
                 &tpm LALT LC(N1) &kp LC(N2)      &kp LC(N3)      &kp LC(N4)      &tpl SYSTEM INSERT  &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PAGE_UP
-                &kp LSHFT        &tpm LCTRL TAB  &tpm LALT ENTER &kp ESCAPE      &trans              &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
+                &kp LSHFT        &tpm LALT TAB  &tpm LCTRL ENTER &kp ESCAPE      &trans              &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
                 &kp LC(Z)        &tpm LGUI C_VOL_DN &kp C_VOL_UP &kp C_PP        &kp C_NEXT          &trans          &trans          &trans          &trans          &trans
                                                                  &trans          &to GAMING          &trans          &trans
             >;
@@ -161,7 +161,7 @@
             bindings = <
                 &trans          &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN   &kp END           &kp INSERT      &trans          &trans          &trans          &trans
                 &trans          &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT         &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
-                &trans          &trans          &trans          &trans          &trans            &trans          &trans          &trans          &trans          &trans
+                &trans          &kp BACKSPACE   &kp ENTER       &kp ESC         &trans            &trans          &trans          &trans          &trans          &trans
                                                                 &to DFLT        &kp SPACE         &kp BACKSPACE   &trans
             >;
         };
