@@ -116,7 +116,7 @@
             bindings = <
                 &tpm LALT EXCL   &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &kp MINUS
                 &bpm LSHIFT GRAVE &tpm LGUI EQUAL &tpm LCTRL UNDER &tpm LALT COLON &kp LPAR          &kp RPAR        &kp N4          &kp N5          &kp N6          &bpm LSHIFT N0
-                &kp BACKSLASH    &kpAMPS         &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &tpm LALT N1    &tpm LCTRL N2   &tpm LGUI N3    &kp DOT
+                &kp BACKSLASH    &kp AMPS         &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &tpm LALT N1    &tpm LCTRL N2   &tpm LGUI N3    &kp DOT
                                                                  &trans          &trans              &trans          &trans
             >;
         };
