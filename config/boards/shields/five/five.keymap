@@ -107,8 +107,8 @@
             bindings = <
                 &tpm LALT Q      &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P
                 &bpm LSHIFT A    &tpm LALT S     &tpm LCTRL D    &kp F           &kp G               &kp H           &kp J           &kp K           &kp L           &bpm LSHIFT SQT
-                &tpl LNUM Z      &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &tpl LCTRL COMMA &tpm LGUI DOT   &kp SLASH
-                                                                 &hpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE   &kp LCTRL
+                &tpl LNUM Z      &tpm LGUI X     &kp C           &kp V           &kp B               &kp N           &kp M           &tpl LCTRL COMMA &tpm LGUI DOT  &kp SLASH
+                                                                 &bpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE   &kp LCTRL
             >;
         };
 
