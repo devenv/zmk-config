@@ -34,7 +34,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BALANCED_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <150>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -48,9 +48,9 @@
         };
         hpm: hold_preferred_modifier {
             compatible = "zmk,behavior-hold-tap";
-            label = "BALANCED_MODIFIER";
+            label = "HOLD_PREFERRED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BALANCED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <135>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
@@ -105,73 +105,73 @@
 
         default_layer {
             bindings = <
-                &tpm LALT Q      &kp W           &kp E           &kp R           &kp T               &kp Y           &kp U           &kp I           &kp O           &kp P
-                &bpm LSHIFT A    &tpm LGUI S     &tpm LCTRL D    &tpm LALT F     &kp G               &kp H           &kp J           &kp K           &kp L           &bpm LSHIFT SQT
-                &tpl LNUM Z      &kp X           &kp C           &kp V           &kp B               &kp N           &tpm LALT M     &tpm LCTRL COMMA &tpm LGUI DOT  &kp SLASH
-                                                                 &bpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE   &kp LCTRL
+                &tpm LALT Q       &kp W           &kp E            &kp R           &kp T               &kp Y         &kp U        &kp I            &kp O         &tpm LALT P
+                &hpm LSHIFT A     &tpm LGUI S     &tpm LCTRL D     &tpm LALT F     &kp G               &kp H         &kp J        &kp K            &kp L         &hpm LSHIFT SQT
+                &tpl LNUM Z       &kp X           &kp C            &kp V           &kp B               &kp N         &kp M        &kp COMMA        &tpm LGUI DOT &kp SLASH
+                                                                   &bpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE &kp LCTRL
             >;
         };
 
         symbols_layer {
             bindings = <
-                &tpm LALT EXCL   &kp AT          &kp HASH        &kp DOLLAR      &kp PERCENT         &kp CARET       &kp N7          &kp N8          &kp N9          &kp MINUS
-                &bpm LSHIFT GRAVE &tpm LGUI EQUAL &tpm LCTRL UNDER &tpm LALT COLON &kp LPAR          &kp RPAR        &kp N4          &kp N5          &kp N6          &bpm LSHIFT N0
-                &kp BACKSLASH    &kp AMPS         &kp STAR        &kp SEMI        &kp LBKT            &kp RBKT        &tpm LALT N1    &tpm LCTRL N2   &tpm LGUI N3    &kp DOT
-                                                                 &trans          &trans              &trans          &trans
+                &tpm LALT EXCL    &kp AT          &kp HASH         &kp DOLLAR       &kp PERCENT        &kp CARET     &kp N7       &kp N8           &kp N9        &kp MINUS
+                &hpm LSHIFT GRAVE &tpm LGUI EQUAL &tpm LCTRL UNDER &tpm LALT COLON  &kp LPAR           &kp RPAR      &kp N4       &kp N5           &kp N6        &hpm LSHIFT N0
+                &kp BACKSLASH     &kp AMPS        &kp STAR         &kp SEMI         &kp LBKT           &kp RBKT      &tpm LALT N1 &tpm LCTRL N2    &tpm LGUI N3  &kp DOT
+                                                                   &trans           &trans             &trans        &trans
             >;
         };
  
         extra_layer {
             bindings = <
-                &tpm LALT LA(N1)  &kp LA(N2)     &kp LA(N3)      &kp LA(N4)     &tpl SYSTEM INSERT &kp INSERT      &kp HOME        &kp END         &sk PAGE_UP     &kp PAGE_UP
-                &kp LSHFT        &tpm LGUI TAB  &tpm LCTRL ENTER &tpm LALT ESCAPE &trans             &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
-                &kp LC(Z)        &kp C_VOL_DN &kp C_VOL_UP &kp C_PP              &kp C_NEXT          &trans          &trans          &trans          &trans          &trans
-                                                                 &trans          &to GAMING          &trans          &trans
+                &tpm LALT LA(N1)  &kp LA(N2)      &kp LA(N3)       &kp LA(N4)       &sl SYSTEM         &kp INSERT    &kp HOME     &kp END          &sk PAGE_UP   &kp PAGE_UP
+                &kp LSHFT         &tpm LGUI TAB   &tpm LCTRL ENTER &tpm LALT ESCAPE &trans             &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
+                &kp LC(Z)         &kp C_VOL_DN    &kp C_VOL_UP     &kp C_PP         &kp C_NEXT         &trans        &trans       &trans           &trans        &trans
+                                                                   &trans           &to GAMING         &trans        &trans
             >;
         };
 
         gaming_layer {
             bindings = <
-                &kp TAB         &kp Q           &kp W           &kp E           &kp R            &kp T              &kp N7          &kp N8          &kp N9          &kp MINUS
-                &kp LSHIFT      &kp A           &kp S           &kp D           &kp F            &kp G              &kp N4          &kp N5          &kp N6          &kp N0
-                &kp LALT        &tpl LNUM Z     &tpl GNUM X     &kp C           &kp V            &kp B              &kp N1          &kp N2          &kp N3          &kp DOT
-                                                                &kp LCTRL       &kp SPACE        &to DFLT           &trans
+                &kp TAB           &kp Q           &kp W            &kp E            &kp R              &kp T         &kp N7       &kp N8           &kp N9        &kp MINUS
+                &kp LSHIFT        &kp A           &kp S            &kp D            &kp F              &kp G         &kp N4       &kp N5           &kp N6        &kp N0
+                &kp LALT          &tpl LNUM Z     &tpl GNUM X      &kp C            &kp V              &kp B         &kp N1       &kp N2           &kp N3        &kp DOT
+                                                                   &kp LCTRL        &kp SPACE          &to DFLT      &trans
             >;
         };
 
         game_num_layer {
             bindings = <
-                &kp MINUS       &kp N5          &trans          &kp N6          &kp PLUS          &trans            &trans          &trans         &trans           &trans
-                &kp N7          &kp N1          &kp S           &kp N2          &kp N8            &trans            &trans          &trans         &trans           &kp LSHIFT
-                &kp N9          &kp N3          &trans          &kp N4          &kp N0            &trans            &trans          &trans         &trans           &trans
-                                                                &to DFLT        &kp SPACE         &kp BACKSPACE     &trans
+                &kp MINUS         &kp N5          &trans           &kp N6           &kp PLUS           &trans        &trans       &trans          &trans         &trans
+                &kp N7            &kp N1          &kp S            &kp N2           &kp N8             &trans        &trans       &trans          &trans         &kp LSHIFT
+                &kp N9            &kp N3          &trans           &kp N4           &kp N0             &trans        &trans       &trans          &trans         &trans
+                                                                   &to DFLT         &kp SPACE          &kp BACKSPACE &trans
             >;
         };
 
         left_num_layer {
             bindings = <
-                &trans          &trans          &kp N7          &kp N8          &kp N9            &trans            &trans          &trans         &trans           &trans
-                &trans          &trans          &kp N4          &kp N5          &kp N6            &trans            &trans          &trans         &trans           &kp LSHIFT
-                &trans          &trans          &kp N1          &kp N2          &kp N3            &trans            &trans          &trans         &trans           &trans
-                                                                &kp N0          &kp MINUS         &kp BACKSPACE     &trans
+                &trans            &trans          &kp N7           &kp N8           &kp N9             &trans        &trans       &trans          &trans         &trans
+                &trans            &trans          &kp N4           &kp N5           &kp N6             &trans        &trans       &trans          &trans         &kp LSHIFT
+                &trans            &trans          &kp N1           &kp N2           &kp N3             &trans        &trans       &trans          &trans         &trans
+                                                                   &kp N0           &kp MINUS          &kp BACKSPACE &trans
             >;
         };
 
         nav_layer {
             bindings = <
-                &trans          &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN   &kp END           &kp INSERT      &trans          &trans          &trans          &trans
-                &trans          &kp LEFT        &kp UP          &kp DOWN        &kp RIGHT         &kp LEFT        &kp DOWN        &kp UP          &kp RIGHT       &kp LSHIFT
-                &trans          &kp BACKSPACE   &kp ENTER       &kp ESC         &trans            &trans          &trans          &trans          &trans          &trans
-                                                                &to DFLT        &kp SPACE         &kp BACKSPACE   &trans
+                &trans            &kp HOME        &kp PAGE_UP      &kp PAGE_DOWN    &kp END            &kp INSERT    &trans       &trans          &trans         &trans
+                &trans            &kp LEFT        &kp UP           &kp DOWN         &kp RIGHT          &kp LEFT      &kp DOWN     &kp UP          &kp RIGHT      &kp LSHIFT
+                &trans            &kp BACKSPACE   &kp ENTER        &kp ESC          &trans             &trans        &trans       &trans          &trans         &trans
+                                                                   &to DFLT         &kp SPACE          &kp BACKSPACE &trans
             >;
         };
 
         system_layer {
             bindings = <
-                &trans          &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &trans             &trans           &kp F1          &kp F2          &kp F3          &kp F10
-                &trans          &out OUT_USB    &out OUT_BLE    &trans          &sys_reset         &trans           &kp F4          &kp F5          &kp F6          &kp F11
-                &bootloader     &bt BT_CLR      &trans          &trans          &trans             &trans           &kp F7          &kp F8          &kp F9          &kp F12
-                                                                &trans          &trans             &trans           &bootloader
+                &trans            &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &trans             &trans        &kp F1       &kp F2          &kp F3         &kp F10
+                &trans            &out OUT_USB    &out OUT_BLE     &trans           &sys_reset         &trans        &kp F4       &kp F5          &kp F6         &kp F11
+                &bootloader       &bt BT_CLR      &trans           &trans           &trans             &trans        &kp F7       &kp F8          &kp F9         &kp F12
+                                                                   &trans           &trans             &trans        &bootloader
 
             >;
         };
