@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+
 
 
 #define DFLT      0
@@ -17,7 +19,8 @@
 #define GNUM      4
 #define LNUM      5
 #define NAV       6
-#define SYSTEM    7
+#define MOUSE     7
+#define SYSTEM    8
 
 
 / {
@@ -117,16 +120,16 @@
                 &tpm LALT EXCL    &kp AT          &kp HASH         &kp DOLLAR       &kp PERCENT        &kp CARET     &kp N7       &kp N8           &kp N9        &kp MINUS
                 &hpm LSHIFT GRAVE &tpm LGUI EQUAL &tpm LCTRL UNDER &tpm LALT COLON  &kp LPAR           &kp RPAR      &kp N4       &kp N5           &kp N6        &hpm LSHIFT N0
                 &kp BACKSLASH     &kp AMPS        &kp STAR         &kp SEMI         &kp LBKT           &kp RBKT      &tpm LALT N1 &tpm LCTRL N2    &tpm LGUI N3  &kp DOT
-                                                                   &trans           &trans             &trans        &trans
+                                                                   &mo MOUSE        &trans             &trans        &trans
             >;
         };
  
         extra_layer {
             bindings = <
-                &tpm LALT LA(N1)  &kp LA(N2)      &kp LA(N3)       &kp LA(N4)       &sl SYSTEM         &kp INSERT    &kp HOME     &kp END          &sk PAGE_UP   &kp PAGE_UP
-                &kp LSHFT         &tpm LGUI TAB   &tpm LCTRL ENTER &tpm LALT ESCAPE &trans             &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
+                &tpm LALT LA(N1)  &kp LA(N2)      &kp LA(N3)       &kp LA(N4)       &mo SYSTEM         &kp INSERT    &kp HOME     &kp END          &sk PAGE_UP   &kp PAGE_UP
+                &kp LSHFT         &tpm LGUI TAB   &tpm LCTRL ENTER &tpm LALT ESCAPE &to GAMING         &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
                 &kp LC(Z)         &kp C_VOL_DN    &kp C_VOL_UP     &kp C_PP         &kp C_NEXT         &trans        &trans       &trans           &trans        &trans
-                                                                   &trans           &to GAMING         &trans        &trans
+                                                                   &trans           &mo MOUSE          &trans        &trans
             >;
         };
 
@@ -163,6 +166,16 @@
                 &trans            &kp LEFT        &kp UP           &kp DOWN         &kp RIGHT          &kp LEFT      &kp DOWN     &kp UP          &kp RIGHT      &kp LSHIFT
                 &trans            &kp BACKSPACE   &kp ENTER        &kp ESC          &trans             &trans        &trans       &trans          &trans         &trans
                                                                    &to DFLT         &kp SPACE          &kp BACKSPACE &trans
+            >;
+        };
+
+        mouse_layer {
+            bindings = <
+                &trans            &mkp RCLK        &mmv MOVE_UP     &mkp LCLK        &mwh SCROLL_UP    &trans        &trans       &trans          &trans         &trans
+                &trans            &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mwh SCROLL_DOWN  &trans        &trans       &trans          &trans         &trans
+                &bootloader       &trans           &trans           &trans           &trans            &trans        &trans       &trans          &trans         &trans
+                                                                    &trans           &trans            &trans        &trans
+
             >;
         };
 
