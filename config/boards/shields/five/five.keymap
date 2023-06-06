@@ -53,7 +53,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_PREFERRED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -111,7 +111,7 @@
                 &tpm LALT Q       &kp W           &kp E            &kp R           &kp T               &kp Y         &kp U        &kp I            &kp O         &tpm LALT P
                 &hpm LSHIFT A     &tpm LGUI S     &tpm LCTRL D     &tpm LALT F     &kp G               &kp H         &kp J        &kp K            &kp L         &hpm LSHIFT SQT
                 &tpl LNUM Z       &kp X           &kp C            &kp V           &kp B               &kp N         &kp M        &kp COMMA        &tpm LGUI DOT &kp SLASH
-                                                                   &bpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE &kp LCTRL
+                                                                   &hpl EXTRA TAB  &bpl SYMBOLS SPACE  &kp BACKSPACE &kp LCTRL
             >;
         };
 
