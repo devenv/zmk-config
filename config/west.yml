@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: mouse
-      url-base: https://github.com/ftc/zmk
+      url-base: https://github.com/ftc
 
   projects:
     - name: zmk
