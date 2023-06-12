@@ -77,13 +77,31 @@
         combo_print_screen_r_t {
             timeout-ms = <50>;
             key-positions = <3 4>;
-            bindings = <&kp PSCRN>;
+            bindings = <&kp LC(LS(S))>;
             layers = <EXTRA>;
         };
-        combo_caps_word_d_f {
+        combo_caps_word_a_s {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&caps_word>;
+            layers = <DFLT>;
+        };
+        combo_escape_s_d {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp ESCAPE>;
+            layers = <DFLT>;
+        };
+        combo_enter_d_f {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&caps_word>;
+            bindings = <&kp ENTER>;
+            layers = <DFLT>;
+        };
+        combo_momentary_to_symbols_j_k {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&mo SYMBOLS>;
             layers = <DFLT>;
         };
         combo_dflt_to_nav_c_v {
