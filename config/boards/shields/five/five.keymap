@@ -86,12 +86,6 @@
             bindings = <&caps_word>;
             layers = <DFLT>;
         };
-        combo_escape_s_d {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp ESCAPE>;
-            layers = <DFLT>;
-        };
         combo_enter_d_f {
             timeout-ms = <50>;
             key-positions = <12 13>;
@@ -101,26 +95,8 @@
         combo_sticky_to_symbols_j_k {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&sl SYMBOLS>;
+            bindings = <&kp ESCAPE>;
             layers = <DFLT>;
-        };
-        combo_sticky_to_extra_k_l {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&sl EXTRA>;
-            layers = <DFLT>;
-        };
-        combo_dflt_to_nav_c_v {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&to NAV>;
-            layers = <DFLT>;
-        };
-        combo_nav_to_dflt_c_v {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&to DFLT>;
-            layers = <NAV>;
         };
     };
 
