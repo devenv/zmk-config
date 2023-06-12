@@ -98,10 +98,16 @@
             bindings = <&kp ENTER>;
             layers = <DFLT>;
         };
-        combo_momentary_to_symbols_j_k {
+        combo_sticky_to_symbols_j_k {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&mo SYMBOLS>;
+            bindings = <&sl SYMBOLS>;
+            layers = <DFLT>;
+        };
+        combo_sticky_to_extra_k_l {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&sl EXTRA>;
             layers = <DFLT>;
         };
         combo_dflt_to_nav_c_v {
