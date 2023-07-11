@@ -6,7 +6,6 @@ url: https://github.com/devenv/zmk-config
 requires: [pro_micro]
 features:
   - keys
-  - display
 siblings:
   - seven_left
   - seven_right
