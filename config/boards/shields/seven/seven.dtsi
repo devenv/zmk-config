@@ -13,7 +13,7 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    default_column_transform: keymap_transform_0 {
+    default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <4>;
