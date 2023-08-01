@@ -104,8 +104,8 @@
         default_layer {
             bindings = <
                 &tpm LALT Q       &kp W           &kp E            &kp R           &kp T               &kp Y         &kp U        &kp I            &kp O         &tpm LALT P
-                &bpm LSHIFT A     &tpm LGUI S     &tpm LCTRL D     &tpm LALT F     &kp G               &kp H         &kp J        &kp K            &kp L         &bpm LSHIFT SQT
-                &tpl LNUM Z       &kp X           &kp C            &kp V           &kp B               &kp N         &kp M        &kp COMMA        &tpm LGUI DOT &kp SLASH
+                &bpm LSHIFT A     &tpm LCTRL S    &tpm LCTRL D     &tpm LALT F     &kp G               &kp H         &kp J        &kp K            &kp L         &bpm LSHIFT SQT
+                &tpm LCTRL Z      &tpm LGUI X     &kp C            &kp V           &kp B               &kp N         &kp M        &kp COMMA        &tpm LGUI DOT &kp SLASH
                                                   &mo EXTRA        &bpl SYMBOLS SPACE &bpm LCTRL TAB   &kp BACKSPACE &kp LSHIFT  &kp LCTRL
             >;
         };
@@ -113,7 +113,7 @@
         symbols_layer {
             bindings = <
                 &tpm LALT EXCL    &kp AT          &kp HASH         &kp DOLLAR       &kp PERCENT        &kp CARET     &kp N7       &kp N8           &kp N9        &kp MINUS
-                &bpm LSHIFT GRAVE &tpm LGUI EQUAL &tpm LCTRL UNDER &tpm LALT COLON  &kp LPAR           &kp RPAR      &kp N4       &kp N5           &kp N6        &bpm LSHIFT N0
+                &bpm LSHIFT GRAVE &tpm LCTRL EQUAL &tpm LCTRL UNDER &tpm LALT COLON &kp LPAR           &kp RPAR      &kp N4       &kp N5           &kp N6        &bpm LSHIFT N0
                 &kp BACKSLASH     &kp AMPS        &kp STAR         &kp SEMI         &kp LBKT           &kp RBKT      &tpm LALT N1 &tpm LCTRL N2    &tpm LGUI N3  &kp DOT
                                                   &mo LNUM         &mo LNUM         &to GAMING         &trans        &trans       &kp DEL
             >;
