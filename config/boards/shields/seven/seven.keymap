@@ -116,7 +116,7 @@
         extra_layer {
             bindings = <
                 &tpm LALT LA(N1)  &kp LA(N2)      &kp LA(N3)       &kp LA(N4)       &tpl SYSTEM LA(N5) &kp INSERT    &kp HOME     &kp END          &sk PAGE_UP   &kp PAGE_UP
-                &kp LSHFT         &tpm LCTRL TAB  &tpm LCTRL ENTER &tpm LALT ESCAPE &trans             &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
+                &kp LSHFT         &tpm LCTRL TAB  &tpm LCTRL ENTER &tpm LALT ESCAPE &kp LC(ENTER)      &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
                 &kp LC(Z)         &kp C_VOL_DN    &kp C_VOL_UP     &kp C_PP         &kp C_NEXT         &trans        &trans       &trans           &trans        &trans
                                                   &trans           &trans           &to GAMING         &trans        &trans       &kp DEL
             >;
