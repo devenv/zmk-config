@@ -81,7 +81,7 @@
         combo_print_screen_e_r {
             timeout-ms = <50>;
             key-positions = <2 3>;
-            bindings = <&kp LGUI(LS(S))>;
+            bindings = <&kp PRINTSCREEN>;
             layers = <EXTRA>;
         };
         combo_caps_word_a_s {
