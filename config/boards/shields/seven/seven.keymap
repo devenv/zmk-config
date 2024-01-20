@@ -24,7 +24,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_PREFERRED_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <130>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -32,7 +32,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "BALANCED_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
+            tapping-term-ms = <125>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -40,7 +40,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_REFERRED_LAYER";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -64,7 +64,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_REFERRED_MODIFIER";
             #binding-cells = <2>;
-            tapping-term-ms = <160>;
+            tapping-term-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
