@@ -107,7 +107,7 @@
         symbols_layer {
             bindings = <
                 &tpm LALT EXCL    &kp AT          &kp HASH         &kp DOLLAR       &kp PERCENT        &kp CARET     &kp N7       &kp N8           &kp N9        &kp MINUS
-                &bpm LSHIFT GRAVE &tpm LCTRL EQUAL &tpm LCTRL UNDER &tpm LALT COLON &tpm LGUI LPAR     &kp RPAR      &kp N4       &kp N5           &kp N6        &bpm LSHIFT N0
+                &tpm LSHIFT GRAVE &tpm LCTRL EQUAL &tpm LCTRL UNDER &tpm LALT COLON &tpm LGUI LPAR     &kp RPAR      &kp N4       &kp N5           &kp N6        &tpm LSHIFT N0
                 &kp BACKSLASH     &kp AMPS        &kp STAR         &kp SEMI         &kp LBKT           &kp RBKT      &kp N1       &kp N2           &kp N3        &kp DOT
                                                   &kp C_PP         &trans           &trans             &trans        &trans       &kp DEL
             >;
@@ -116,7 +116,7 @@
         extra_layer {
             bindings = <
                 &tpm LALT LA(N1)  &kp LA(N2)      &kp LA(N3)       &kp LA(N4)       &tpl SYSTEM LA(N5) &kp INSERT    &kp HOME     &kp END          &sk PAGE_UP   &kp PAGE_UP
-                &bpm LSHIFT LA(TAB) &tpm LCTRL TAB &tpm LCTRL ENTER &tpm LALT ESCAPE &kp C_VOL_UP      &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
+                &tpm LSHIFT LA(TAB) &tpm LCTRL TAB &tpm LCTRL ENTER &tpm LALT ESCAPE &kp C_VOL_UP      &kp LEFT      &kp DOWN     &kp UP           &kp RIGHT     &kp LSHIFT
                 &kp LC(Z)         &kp LC(X)       &kp LC(C)        &kp LC(V)        &kp C_VOL_DN       &trans        &trans       &trans           &trans        &trans
                                                   &trans           &kp C_NEXT       &to GAMING         &trans        &trans       &kp DEL
             >;
