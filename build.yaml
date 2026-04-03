@@ -1,4 +1,4 @@
 ---
 include:
-  - board: xiao_ble/zmk
+  - board: xiao_ble/nrf52840
     shield: quill
