@@ -1,0 +1,19 @@
+/*
+ * Quill - 2-Button BLE Keyboard
+ * Hardware: Seeed XIAO nRF52840
+ */
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        
+        input-gpios
+            = <&xiao_d 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // Button A on D2
+            , <&xiao_d 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>  // Button B on D3
+            ;
+    };
+};

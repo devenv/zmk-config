@@ -1,0 +1,6 @@
+if SHIELD_QUILL
+
+config ZMK_KEYBOARD_NAME
+    default "Quill Keyboard"
+
+endif

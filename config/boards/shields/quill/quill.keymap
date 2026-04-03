@@ -1,0 +1,77 @@
+/*
+ * Quill Keymap - 2-Button Layout
+ * 
+ * Button A & B:
+ *   - Tap: Enter
+ *   - Double-tap: Backspace
+ *   - Hold (500ms): Layer toggle for combos
+ * 
+ * Button A Hold:
+ *   - Acts as Alt+Ctrl modifier
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    behaviors {
+        // Tap-dance: single tap = Enter, double tap = Backspace
+        td_enter_bspc: tap_dance_enter_backspace {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_ENTER_BACKSPACE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp ENTER>, <&kp BSPC>;
+        };
+
+        // Hold-tap for Button A: tap = tap-dance, hold = Alt+Ctrl
+        ht_a: hold_tap_a {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_A";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&td_enter_bspc>;
+        };
+
+        // Hold-tap for Button B: tap = tap-dance, hold = layer toggle
+        ht_b: hold_tap_b {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_B";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <500>;
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&td_enter_bspc>;
+        };
+
+        // Custom behavior: Alt+Ctrl combo
+        alt_ctrl: alt_ctrl_mod {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_CTRL";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LALT)>, <&kp LC(LALT)>;
+            mods = <(MOD_LCTL|MOD_LALT)>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            label = "Base";
+            bindings = <
+                &ht_a LC(LALT) 0    &ht_b 1 0
+            >;
+        };
+
+        combo_layer {
+            label = "Combo";
+            // When either button held, other button becomes Ctrl+Backspace
+            bindings = <
+                &kp LC(BSPC)    &kp LC(BSPC)
+            >;
+        };
+    };
+};
