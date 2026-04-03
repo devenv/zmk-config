@@ -17,3 +17,8 @@
             ;
     };
 };
+
+// Enable BLE connection LED indicator (uses board's built-in LED)
+&led0 {
+    status = "okay";
+};
