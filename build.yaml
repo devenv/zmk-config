@@ -1,4 +1,4 @@
 ---
 include:
-  - board: xiao_ble
+  - board: xiao_ble/zmk
     shield: quill
