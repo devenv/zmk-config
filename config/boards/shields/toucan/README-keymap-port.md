@@ -21,39 +21,46 @@ one firmware config, sized for the **42-key** layout (6 cols x 3 rows + 3
 thumb, per hand). There is no separate 36-key firmware repo or build target
 anywhere in that fork population — checked via GitHub's API, not assumed.
 
-Conclusion, inferred rather than confirmed by beekeeb directly: the 36-key
-SKU is the same PCB/matrix with 2 columns per hand left unpopulated (no
-switches soldered), sharing one firmware. That's exactly the "extra column,
-no source key" situation this port already handles for the original Toucan
-(see below) — same fix applies. If Boris's unit behaves differently after
-flashing (e.g. ghost keypresses on the inner columns), that would mean the
-36-key SKU is a genuinely different PCB, and this assumption needs revisiting.
+42 - 36 = 6 keys total = **3 keys per hand = exactly 1 unpopulated column
+per hand** (3 rows x 1 col), not 2 as originally assumed below (that math
+error is why the first flash was wrong — see next section). The 36-key SKU
+is the same PCB/matrix with 1 column per hand left unpopulated, sharing one
+firmware.
 
-## Column mapping (per row, 0-indexed)
+## Column mapping (per row, 0-indexed) — corrected after first flash
 
-seven: 5 cols x 3 rows + 3 thumb, per hand. Toucan2 firmware: 6 cols x 3
-rows + 3 thumb, per hand. Toucan2 is a strict superset column-wise; nothing
-from seven was dropped. Thumb clusters are the same size (3 per hand) and
-map 1:1, left-to-right, unchanged.
+**First attempt (wrong):** assumed 2 unpopulated columns per hand, both at
+the *innermost* edge next to the split gap (toucan cols 5,6), leaving
+seven's columns 0-4 mapped straight across to toucan cols 0-4 unchanged.
+Flashed to the left half and confirmed by Boris: pressing the physically
+leftmost key produced `W`, not `Q` — i.e. seven's column 0 (`Q`) was landing
+one position inward of where it actually needed to be. That's inconsistent
+with a 2-column gap at the inner edge; it's exactly what you'd see if the
+*single* unpopulated column is at the **outer** edge (toucan col 0 / col 11,
+`SW1` on each hand) instead, pushing every real key one position inward.
 
-The extra column sits innermost, next to the split gap (matrix-transform's
-`SW1..SW6` per hand, `SW6` innermost — see `toucan.dtsi`):
+**Corrected mapping**, matrix-transform's `SW1..SW6` per hand (`SW1`
+outermost/pinky, `SW6` innermost, at the split gap — see `toucan.dtsi`):
 
-| seven col  | 0 | 1 | 2 | 3 | 4 | -  | -  | 5 | 6 | 7 | 8 | 9 |
-|------------|---|---|---|---|---|----|----|---|---|---|---|---|
-| toucan col | 0 | 1 | 2 | 3 | 4 | 5* | 6* | 7 | 8 | 9 | 10| 11|
+| seven col  | -  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | -  |
+|------------|----|---|---|---|---|---|---|---|---|---|---|----|
+| toucan col | 0* | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10| 11*|
 
-`*` = new, no seven source, and (per above) likely physically unpopulated on
-the 36-key board anyway. Bound to `&none` on every layer — no principled
-default to port, and easily reassigned later via ZMK Studio (enabled for
-`toucan_left` in `build.yaml`). This mapping applies identically to all
-three non-thumb rows, for all six ported layers.
+`*` = toucan col 0 and col 11 (outermost each hand, `SW1`) — no seven
+source, likely physically unpopulated on the 36-key board. Bound to `&none`
+on every layer — no principled default to port, and easily reassigned later
+via ZMK Studio (enabled for `toucan_left` in `build.yaml`). This mapping
+(seven col N → toucan col N+1, uniformly) applies identically to all three
+non-thumb rows, for all six ported layers. Thumb clusters are unaffected
+(same size, 3 per hand, unchanged position — the outer-column shift only
+touches the 3 main rows).
 
 ## Combo
 
-`combo_print_screen_r_t` (key-positions `<3 4>` = R, T on row 0, `EXTRA`
-layer) needed no change: both positions live in the left hand's columns
-0-4, numerically unchanged between seven and Toucan2.
+`combo_print_screen_r_t` (R, T on row 0, `EXTRA` layer) shifted with the
+column fix above: seven's flat positions `<3 4>` become toucan's `<4 5>`,
+since R/T are seven columns 3/4 → toucan columns 4/5, and row 0's flat
+key-position index equals its column index.
 
 ## New: `mouse_layer` (index 6, `MOUSE`)
 
