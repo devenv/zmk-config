@@ -1,5 +1,10 @@
 if SHIELD_NICE_VIEW_GEM
 
+config TOUCAN_STATUS_SCREEN
+    int "Status screen style (0 to 2)"
+    default 2
+    range 0 2
+
 config LV_Z_VDB_SIZE
     default 100
 
@@ -28,19 +33,19 @@ config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
     imply NICE_VIEW_WIDGET_STATUS
 
 config NICE_VIEW_WIDGET_STATUS
+    default y
     select LV_USE_LABEL
     select LV_USE_IMG
     select LV_USE_CANVAS
     select LV_USE_ANIMIMG
     select LV_USE_ANIMATION
+    select ZMK_WPM
 
 config NICE_VIEW_WIDGET_INVERTED
     bool "Invert display colors"
 
 if !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 
-config NICE_VIEW_WIDGET_STATUS
-    select ZMK_WPM
 
 endif # !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
 

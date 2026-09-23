@@ -1,68 +1,90 @@
 # toucan.keymap — port from seven
 
-`toucan.keymap` is a direct port of `../seven/seven.keymap` (same 6 layers,
-same hold-tap behaviors, same combo), remapped onto the Toucan's physical
-key positions. `seven.conf`'s settings are host/global, not shield-specific,
-and are not part of this port — see `config/seven.conf` if those need
-carrying over to Toucan too.
+This is the beekeeb **Toucan2** (github.com/beekeeb/zmk-keyboard-toucan2),
+confirmed by Boris (q413: "Toucan2 36 Keys Wireless Split Keyboard with
+Multi-touch Trackpad" — the shop.beekeeb.com/products/toucan2 listing's
+36-key variant), **not** the original Toucan (zmk-keyboard-toucan, single-
+touch cirque trackpad) this lane started from. The shield directory is still
+called `toucan` inside beekeeb's `zmk-keyboard-toucan2` repo — that's their
+naming, not a leftover from the wrong board.
 
-## Key count
+`toucan.keymap` ports `../seven/seven.keymap`'s 6 layers (same hold-tap
+behaviors, same combo) onto Toucan2's physical key positions, plus one new
+`mouse_layer` (see below).
 
-- seven: 5 cols x 3 rows + 3 thumb keys, per hand -> 36 keys total.
-- Toucan: 6 cols x 3 rows + 3 thumb keys, per hand -> 42 keys total.
+## Key count: 36 vs 42 firmware, one PCB
 
-Toucan is a strict superset column-wise: every seven key position exists on
-Toucan, plus one new column per hand. **Nothing from seven was dropped.**
-The thumb clusters are the same size (3 per hand) and map 1:1, left-to-right,
-unchanged.
+seven and the "36 Keys" Toucan2 variant both have 36 keys. But beekeeb's own
+`zmk-keyboard-toucan2` repo (and every one of ~50 customer-generated forks
+checked, including one a buyer named `-36` after their own order) ships only
+one firmware config, sized for the **42-key** layout (6 cols x 3 rows + 3
+thumb, per hand). There is no separate 36-key firmware repo or build target
+anywhere in that fork population — checked via GitHub's API, not assumed.
+
+Conclusion, inferred rather than confirmed by beekeeb directly: the 36-key
+SKU is the same PCB/matrix with 2 columns per hand left unpopulated (no
+switches soldered), sharing one firmware. That's exactly the "extra column,
+no source key" situation this port already handles for the original Toucan
+(see below) — same fix applies. If Boris's unit behaves differently after
+flashing (e.g. ghost keypresses on the inner columns), that would mean the
+36-key SKU is a genuinely different PCB, and this assumption needs revisiting.
 
 ## Column mapping (per row, 0-indexed)
 
-Toucan's physical layout inserts its extra column innermost — right next to
-the split gap — one per hand, matching `boards/shields/toucan/toucan.dtsi`'s
-matrix-transform ordering (`SW1..SW6` per hand, `SW6` innermost).
+seven: 5 cols x 3 rows + 3 thumb, per hand. Toucan2 firmware: 6 cols x 3
+rows + 3 thumb, per hand. Toucan2 is a strict superset column-wise; nothing
+from seven was dropped. Thumb clusters are the same size (3 per hand) and
+map 1:1, left-to-right, unchanged.
 
-| seven col | 0 | 1 | 2 | 3 | 4 | -  | -  | 5 | 6 | 7 | 8 | 9 |
-|-----------|---|---|---|---|---|----|----|---|---|---|---|---|
-| toucan col| 0 | 1 | 2 | 3 | 4 | 5* | 6* | 7 | 8 | 9 | 10| 11|
+The extra column sits innermost, next to the split gap (matrix-transform's
+`SW1..SW6` per hand, `SW6` innermost — see `toucan.dtsi`):
 
-`*` = new, no seven source. Left hand columns 0-4 keep identical indices;
-everything right-hand shifts by +2 to make room for the two new inner
-columns (5 = left-inner-new, 6 = right-inner-new).
+| seven col  | 0 | 1 | 2 | 3 | 4 | -  | -  | 5 | 6 | 7 | 8 | 9 |
+|------------|---|---|---|---|---|----|----|---|---|---|---|---|
+| toucan col | 0 | 1 | 2 | 3 | 4 | 5* | 6* | 7 | 8 | 9 | 10| 11|
 
-This mapping is applied identically to all three non-thumb rows, for all
-six layers (default/symbols/extra/gaming/left_num/system).
-
-## The two new columns (5, 6)
-
-Bound to `&none` (inert) on every layer. seven defines no source key for
-these physical positions, so there's no principled default to port — rather
-than guess a binding, they're left inert and easily reassignable later via
-ZMK Studio (enabled in `build.yaml` for `toucan_left` — `-DCONFIG_ZMK_STUDIO=y`
-+ `studio-rpc-usb-uart` snippet). Flagged to Boris as an open question rather
-than picked unilaterally.
+`*` = new, no seven source, and (per above) likely physically unpopulated on
+the 36-key board anyway. Bound to `&none` on every layer — no principled
+default to port, and easily reassigned later via ZMK Studio (enabled for
+`toucan_left` in `build.yaml`). This mapping applies identically to all
+three non-thumb rows, for all six ported layers.
 
 ## Combo
 
 `combo_print_screen_r_t` (key-positions `<3 4>` = R, T on row 0, `EXTRA`
-layer only) needed no change: both positions live in the left hand's
-columns 0-4, which are numerically unchanged between seven and Toucan.
+layer) needed no change: both positions live in the left hand's columns
+0-4, numerically unchanged between seven and Toucan2.
+
+## New: `mouse_layer` (index 6, `MOUSE`)
+
+Not a seven layer — added to preserve Toucan2 hardware behavior that would
+otherwise silently break. `toucan.dtsi`'s `is_touching_processor` momentarily
+activates a layer while a finger touches the trackpad (stock beekeeb keymap:
+their own layer 4, "mouse", puts click buttons on the right thumb keys).
+Left unchanged, it would have activated *this* keymap's layer 4 (`LNUM`,
+seven's left-number layer) on every trackpad touch — a real collision, not
+a cosmetic one.
+
+Fix: added a 7th layer (`MOUSE`, index 6) that's `&trans` everywhere except
+the right thumb cluster (`&mkp LCLK`/`RCLK`/`MCLK`, matching beekeeb's
+stock positions), and repointed `is_touching_processor`'s binding in
+`toucan.dtsi` from `&mo 4` to `&mo 6`. The trackpad's own native tap-to-click
+/ two-finger-tap (`single-tap`, `two-finger-tap` in `toucan_right.overlay`)
+already provides click gestures independently of this layer — this is an
+alternate/backup click method, kept for parity with stock rather than
+independently judged necessary.
 
 ## What did NOT change
 
-- All 6 `#define` layer indices (DFLT=0 … SYSTEM=5) — same values, same layer
-  order.
+- All 6 ported `#define` layer indices (DFLT=0 ... SYSTEM=5) — same values,
+  same order, same behavior. `MOUSE=6` is additive.
 - All hold-tap behaviors (`hpl`/`bpl`/`tpl`/`hpm`/`bpm`/`tpm`) — copied
-  verbatim, tapping terms and flavors unchanged.
-- Thumb row bindings — copied 1:1 by position, no remapping needed (thumb
-  cluster sizes match).
-
-## Trackpad interaction (not part of the port, from beekeeb's stock Toucan
-config, kept as-is)
-
-`config/boards/shields/toucan/toucan.dtsi`'s `glidepoint_listener` scroller
-sub-node activates scroll mode "while layer 1 or 2 is held" (`layers = <1 2>`).
-Those numbers weren't changed for the port — they happen to already match
-this keymap's `SYMBOLS` (1) and `EXTRA` (2) layer indices, so scroll-while-held
-behaves the same as beekeeb's own default (scroll while SYM/NAV-equivalent
-layer held) with zero edits needed.
+  verbatim.
+- Thumb row bindings on the 6 ported layers — copied 1:1 by position.
+- Trackpad gestures (pinch-zoom, 3-finger swipe -> Mission Control, native
+  tap-to-click) — all wired directly into `toucan.dtsi`'s input-processor
+  chain, independent of keymap layers, untouched from beekeeb's stock config.
+  `TOUCAN_WIN_MODE` stays undefined (Mac gesture shortcuts — Boris is on a
+  Mac).
+- Scroll-while-held (`trackpad_listener`'s `scroller` node, layers `<1 2>`)
+  -- already matches this keymap's SYMBOLS(1)/EXTRA(2), no edit needed.

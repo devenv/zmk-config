@@ -3,8 +3,9 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * Port of config/boards/shields/seven/seven.keymap onto the beekeeb Toucan's
- * 42-key layout (6 cols x 3 rows + 3 thumb keys per hand, vs. seven's 5x3+3).
+ * Port of config/boards/shields/seven/seven.keymap onto the beekeeb Toucan2's
+ * 42-key layout (6 cols x 3 rows + 3 thumb keys per hand, vs. seven's 5x3+3),
+ * plus a new MOUSE layer restoring Toucan2's stock touch-to-click behavior.
  * See config/boards/shields/toucan/README-keymap-port.md for the position
  * mapping and what's new.
  */
@@ -13,6 +14,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 
 #define DFLT      0
@@ -21,6 +23,7 @@
 #define GAMING    3
 #define LNUM      4
 #define SYSTEM    5
+#define MOUSE     6
 
 
 / {
@@ -80,7 +83,7 @@
         combo_print_screen_r_t {
             timeout-ms = <50>;
             // Positions 3,4 are R and T on row 0 — unchanged from seven's
-            // numbering because toucan's two new columns (5,6) sit *between*
+            // numbering because toucan2's two new columns (5,6) sit *between*
             // the hands, so the left hand's columns 0-4 keep identical flat
             // key-position indices.
             key-positions = <3 4>;
@@ -142,7 +145,22 @@
                 &bt BT_SEL 0      &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &trans             &none  &none  &trans        &kp F1       &kp F2          &kp F3         &kp F10
                 &trans            &out OUT_USB    &out OUT_BLE     &trans           &sys_reset         &none  &none  &trans        &kp F4       &kp F5          &kp F6         &kp F11
                 &bootloader       &bt BT_CLR      &trans           &trans           &trans             &none  &none  &trans        &kp F7       &kp F8          &kp F9         &kp F12
-                                                   &trans           &trans           &trans             &trans &trans      &bootloader
+                                                   &trans           &trans           &trans             &trans &trans       &bootloader
+            >;
+        };
+
+        // New — not a seven layer. Toucan2's stock keymap activates this
+        // momentarily (&mo, matched in toucan.dtsi's is_touching_processor)
+        // whenever a finger touches the trackpad, so the right thumb keys
+        // become mouse-click buttons while touching. Everything else stays
+        // &trans to the layer already active underneath. See
+        // README-keymap-port.md.
+        mouse_layer {
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                        &trans  &trans  &trans          &mkp LCLK  &mkp RCLK  &mkp MCLK
             >;
         };
     };

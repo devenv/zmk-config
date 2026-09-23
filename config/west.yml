@@ -1,26 +1,27 @@
 manifest:
-  defaults:
-    revision: v0.3
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: geeksville
-      url-base: https://github.com/geeksville
+    - name: beekeeb
+      url-base: https://github.com/beekeeb
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
       import: app/west.yml
-    # Toucan trackpad (Cirque Pinnacle glidepoint) driver, pinned to beekeeb's
-    # "toucan" branch per config/west.yml in github.com/beekeeb/zmk-keyboard-toucan
-    - name: cirque-input-module
-      remote: geeksville
-      revision: toucan
-    # Toucan's battery/BLE-profile RGB status LED widget (rgbled_adapter shield)
+      revision: v0.3
+    # Toucan2's battery/BLE-profile RGB status LED widget (rgbled_adapter shield)
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
+    # Toucan2's multi-touch trackpad (Azoteq TPS43) driver
+    - name: zmk_driver_azoteq
+      remote: beekeeb
+      revision: main
+    # Pinch-to-zoom input processor the trackpad's zip_zoom_mapper depends on
+    - name: zmk-input-zoom
+      remote: beekeeb
+      revision: main
   self:
     path: config
