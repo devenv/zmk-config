@@ -97,11 +97,16 @@
 
         default_layer {
             display-name = "DFLT";
+            // DIAGNOSTIC BUILD (toucan-thumb-diag) -- right thumb 3 keys temporarily
+            // emit N1/N2/N3 (firmware array order: innermost=N1 -> outermost=N3) so
+            // Boris can report which digit is physically where, instead of us
+            // re-deriving "first/third" from devicetree comments a third time.
+            // NOT for real use -- revert before merging.
             bindings = <
                 &none  &kp Q             &kp W           &kp E            &kp R           &kp T          &kp Y         &kp U        &kp I            &kp O         &kp P          &none
                 &none  &bpm LSHIFT A     &tpm LCTRL S    &tpm LCTRL D     &tpm LALT F     &tpm LGUI G    &kp H         &kp J        &kp K            &kp L         &bpm LSHIFT SQT &none
                 &none  &tpm LCTRL Z      &kp X           &kp C            &kp V           &kp B          &kp N         &kp M        &kp COMMA        &kp DOT       &kp SLASH      &none
-                                                          &mo EXTRA        &bpl SYMBOLS SPACE &tpl LNUM TAB    &kp BACKSPACE &mo SYMBOLS  &mkp LCLK
+                                                          &mo EXTRA        &bpl SYMBOLS SPACE &tpl LNUM TAB    &kp N1 &kp N2  &kp N3
             >;
         };
 
