@@ -149,7 +149,8 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackpad_split>;
-        input-processors = <&zip_xy_scaler 100 100>, <&zip_scroll_scaler 1 20>, <&zip_zoom_mapper>, <&is_touching_processor>, <&swipe_button_mapper>;
+        // 150/100 = 1.5x cursor speed (Boris, 2026-09-23 -- default was 100/100 = 1x)
+        input-processors = <&zip_xy_scaler 150 100>, <&zip_scroll_scaler 1 20>, <&zip_zoom_mapper>, <&is_touching_processor>, <&swipe_button_mapper>;
         scroller {
             // Scroll-while-held on layers 1,2 -- coincidentally already matches
             // this keymap's SYMBOLS (1) / EXTRA (2), so left unchanged.
