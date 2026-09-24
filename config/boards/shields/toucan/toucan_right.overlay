@@ -59,6 +59,11 @@
         // idle-sleep; // provides maximal power savings but when ZMK is idle (i.e. you haven't used keyboard in 30secs) the touchpad will not work.  not recommended.
         // timeout-lp1 = <3>; // 60s timeout before entering lp2 state (20 secs per unit) (default was 20s)
         report-rate-lp2 = <640>; // 640ms report rate in LP2 state means 55uA draw rather than default 160ms 174uA draw
+        // 50Hz while touched. Each sample is 2 BLE notifications (X, Y) to the
+        // central; the chip default (~13ms/sample observed) put ~155 notif/s on a
+        // 7.5ms split link and starved key-position sends ("Position state
+        // message queue full" in the right half's log). Boris, 2026-09-24.
+        report-rate-active = <20>;
         scroll-angle = <30>; // The default angle (about 47 deg) is too big on toucan2 I think
         sensitivity = <100>;
         scroll-sensitivity = <100>;
@@ -82,4 +87,22 @@
 
 &trackpad_split {
     device = <&tps43_trackpad>;
+};
+
+// DIAGNOSTIC ONLY (toucan-right-logging) -- CONFIG_ZMK_USB_LOGGING needs a
+// devicetree CDC-ACM UART node; seeeduino_xiao_ble doesn't enable one by
+// default (confirmed via CI: "has direct dependencies ...
+// DT_HAS_ZEPHYR_CDC_ACM_UART_ENABLED ... with value n"). Not for the real
+// build -- revert once captured.
+&zephyr_udc0 {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+        label = "CDC_ACM_0";
+    };
+};
+
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+    };
 };
