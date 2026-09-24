@@ -83,3 +83,21 @@
 &trackpad_split {
     device = <&tps43_trackpad>;
 };
+
+// DIAGNOSTIC ONLY (toucan-right-logging) -- CONFIG_ZMK_USB_LOGGING needs a
+// devicetree CDC-ACM UART node; seeeduino_xiao_ble doesn't enable one by
+// default (confirmed via CI: "has direct dependencies ...
+// DT_HAS_ZEPHYR_CDC_ACM_UART_ENABLED ... with value n"). Not for the real
+// build -- revert once captured.
+&zephyr_udc0 {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+        label = "CDC_ACM_0";
+    };
+};
+
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+    };
+};
