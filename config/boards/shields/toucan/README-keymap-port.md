@@ -87,7 +87,11 @@ independently judged necessary.
   same order, same behavior. `MOUSE=6` is additive.
 - All hold-tap behaviors (`hpl`/`bpl`/`tpl`/`hpm`/`bpm`/`tpm`) — copied
   verbatim.
-- Thumb row bindings on the 6 ported layers — copied 1:1 by position.
+- Thumb row bindings on the 6 ported layers — copied 1:1 by position, with
+  one exception: DFLT's right thumb #2 (between BACKSPACE and the outer
+  `&mkp LCLK`) is `&mkp RCLK` instead of seven's `&mo SYMBOLS` (Boris,
+  2026-09-24). SYMBOLS is still reachable via the left `&bpl SYMBOLS SPACE`
+  hold, which also still drives scroll-while-held.
 - Trackpad gestures (pinch-zoom, 3-finger swipe -> Mission Control, native
   tap-to-click) — all wired directly into `toucan.dtsi`'s input-processor
   chain, independent of keymap layers, untouched from beekeeb's stock config.
